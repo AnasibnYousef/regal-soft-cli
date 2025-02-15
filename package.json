@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "bin": {
-    "regal-soft": "./index.ts"
+    "regal-soft-cli": "dist/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +42,7 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@types/figlet": "^1.7.0",
     "@types/node": "^22.13.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.2",
