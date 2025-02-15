@@ -6,6 +6,7 @@
     "regal-soft-cli": "dist/index.js"
   },
   "scripts": {
+    "prepare": "tsc",
     "build": "tsc"
   },
   "keywords": [],
