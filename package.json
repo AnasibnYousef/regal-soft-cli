@@ -6,6 +6,7 @@
     "postbuild": "cpx \"src/templates/**/*\" dist/templates"
   },
   "main": "dist/index.js",
+  "type": "module",
   "bin": {
     "regal-soft-cli": "dist/index.js"
   },
