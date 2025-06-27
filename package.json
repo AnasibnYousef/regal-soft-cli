@@ -46,6 +46,8 @@
   "devDependencies": {
     "@types/figlet": "^1.7.0",
     "@types/node": "^22.13.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.20",
     "cpx": "^1.5.0",
     "postcss": "^8.5.2",
