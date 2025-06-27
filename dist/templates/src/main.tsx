@@ -8,28 +8,44 @@ import {
   RouteObject,
 } from "react-router-dom";
 import { NuqsAdapter } from "nuqs/adapters/react-router";
-import RedirectPage from "./pages/redirect";
 import { Home } from "./pages/home";
 import ErrorPage from "./error-page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AuthHandler from "./hooks/auth-handler.tsx";
+import { AuthReadyProvider } from "./hooks/auth-provider.tsx";
+import AuthLoadingWrapper from "./hooks/auth-loading-wrapper.tsx";
+import Auth from "./Auth.tsx";
 
 const queryClient = new QueryClient();
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <AuthHandler />
+        <AuthReadyProvider>
+          <App />
+        </AuthReadyProvider>
+      </>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: '/',
+        element: (
+          <AuthLoadingWrapper>
+            <Auth />
+          </AuthLoadingWrapper>
+        ),
+        children: [
+          {
+            path: '/',
+            element: <Home />,
+          },
+        ],
       },
     ],
-  },
-  {
-    path: "/redirect",
-    element: <RedirectPage />,
   },
 ];
 
