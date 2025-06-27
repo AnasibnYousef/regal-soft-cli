@@ -105,9 +105,8 @@ export function NavUser() {
                         to={`${el.url}?tkn=${localStorage.getItem('refreshToken')}`}
                         target="_blank"
                         key={i}
-                        className={`flex flex-col items-center p-2 rounded-lg hover:bg-accent gap-2 ${
-                          el.name == 'Purchase' ? 'bg-accent' : ''
-                        }`}
+                        className={`flex flex-col items-center p-2 rounded-lg hover:bg-accent gap-2 ${el.name == '${moduleName}' ? 'bg-accent' : ''
+                          }`}
                       >
                         <div className="w-16 h-16 rounded-xl">
                           <img
@@ -146,7 +145,7 @@ export function NavUser() {
               <TooltipProvider delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger>
-                    <div className="flex items-center justify-center p-2 text-xs font-semibold leading-none border rounded-full cursor-pointer border-secondary text-secondary dark:border-secondary-foreground dark:text-secondary-foreground size-8">
+                    <div className="flex items-center justify-center p-2 text-xs font-semibold leading-none border rounded-full cursor-pointer border-primary text-primary size-8">
                       {!isLoading && data?.first_name ? (
                         `${data?.first_name?.charAt(0).toUpperCase()}${data?.last_name
                           ?.charAt(0)
